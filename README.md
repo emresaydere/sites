@@ -1,15 +1,16 @@
-# 🔬 DeneyMerkezi - Ortaokul Fen Bilimleri Platformu
+# React + Vite
 
-**DeneyMerkezi**, ortaokul öğrencilerinin fen bilimlerine olan merakını artırmak, deneyleri daha erişilebilir ve eğlenceli hale getirmek için tasarlanmış profesyonel bir eğitim platformudur. Fizik, kimya ve biyoloji alanlarındaki deneyleri sınıf düzeylerine ve konulara göre organize eder.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 🌟 Özellikler
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-* **Dinamik Filtreleme:** 5, 6, 7 ve 8. sınıf düzeylerine göre deneyleri anında süzme.
-* **Branş Kategorileri:** Fizik, Kimya ve Biyoloji için özel olarak tasarlanmış hızlı erişim kartları.
-* **Gelişmiş Arama:** Deney adına veya anahtar kelimeye göre hızlı arama çubuğu.
-* **Öğrenci Dostu Arayüz:** Ortaokul seviyesindeki öğrencilerin dikkatini çekecek canlı, modern ve profesyonel tasarım.
-* **Kapsayıcı Eğitim:** Farklı öğrenme gereksinimleri olan öğrencilerin de rahatça kullanabileceği sade yapı.
+## React Compiler
 
----
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
