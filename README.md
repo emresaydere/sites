@@ -1,16 +1,49 @@
-# React + Vite
+# Deney Merkezi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, React, Vite ve Tailwind CSS kullanılarak oluşturulmuş bir frontend uygulamasıdır. Projenin ana teması, siyah/koyu arka planlar ve parlak/neon mavi vurgular içeren "karanlık kozmik" (dark cosmic) bir tasarıma sahiptir.
 
-Currently, two official plugins are available:
+## Başlangıç
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları izleyebilirsiniz.
 
-## React Compiler
+### Ön Koşullar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Bilgisayarınızda [Node.js](https://nodejs.org/) (önerilen sürüm: v18 veya üstü) yüklü olmalıdır.
 
-## Expanding the ESLint configuration
+### Kurulum
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Depoyu bilgisayarınıza klonlayın veya indirin.
+2. Terminal (veya komut satırı) uygulamanızı açın ve proje dizinine gidin.
+3. Gerekli bağımlılıkları (paketleri) yüklemek için aşağıdaki komutu çalıştırın:
+
+```bash
+npm install
+```
+
+### Projeyi Çalıştırma
+
+Geliştirme sunucusunu başlatmak için aşağıdaki komutu kullanın:
+
+```bash
+npm run dev
+```
+
+Bu komut çalıştıktan sonra, uygulama varsayılan olarak `http://localhost:5173` adresinde erişilebilir olacaktır. Herhangi bir değişiklik yaptığınızda, sayfa otomatik olarak yenilenecektir.
+
+### Derleme (Build)
+
+Uygulamayı canlı ortama (production) hazırlamak üzere derlemek için şu komutu çalıştırın:
+
+```bash
+npm run build
+```
+
+Derlenen dosyalar `dist` klasörü içerisinde oluşturulacaktır.
+
+### Linting (Kod Denetimi)
+
+Kodun standartlara uygunluğunu kontrol etmek için aşağıdaki komutu çalıştırabilirsiniz:
+
+```bash
+npm run lint
+```
