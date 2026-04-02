@@ -1,6 +1,25 @@
-import { X } from 'lucide-react';
+import { X, CheckCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function SimulationModal({ experiment, onClose }) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    let timer;
+    if (experiment) {
+      // Avoid calling setIsLoading(true) in the effect, since the user expects the
+      // loading spinner first. Instead, set it up so that we wait for the timeout
+      // and then turn it to false.
+      timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 1500);
+    }
+    return () => {
+      if (timer) clearTimeout(timer);
+      setIsLoading(true); // Reset state when modal closes or experiment changes
+    };
+  }, [experiment]);
+
   if (!experiment) return null;
 
   return (
@@ -22,11 +41,19 @@ export default function SimulationModal({ experiment, onClose }) {
           {/* Simulated 3D Grid Environment */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [transform:perspective(500px)_rotateX(60deg)] origin-bottom"></div>
 
-          <div className="z-10 text-center animate-pulse">
-            <div className="w-32 h-32 mx-auto mb-6 border-4 border-neon-blue rounded-full border-t-transparent animate-spin"></div>
-            <p className="text-2xl font-light text-neon-blue">Simülasyon Yükleniyor...</p>
-            <p className="text-gray-400 mt-2 text-sm">{experiment.category} - {experiment.grade}. Sınıf</p>
-          </div>
+          {isLoading ? (
+            <div className="z-10 text-center animate-pulse">
+              <div className="w-32 h-32 mx-auto mb-6 border-4 border-neon-blue rounded-full border-t-transparent animate-spin"></div>
+              <p className="text-2xl font-light text-neon-blue">Simülasyon Yükleniyor...</p>
+              <p className="text-gray-400 mt-2 text-sm">{experiment.category} - {experiment.grade}. Sınıf</p>
+            </div>
+          ) : (
+            <div className="z-10 text-center">
+              <CheckCircle size={80} className="mx-auto mb-6 text-green-500" />
+              <p className="text-2xl font-light text-green-500">Simülasyon Hazır</p>
+              <p className="text-gray-400 mt-2 text-sm">{experiment.category} - {experiment.grade}. Sınıf</p>
+            </div>
+          )}
         </div>
 
         {/* Instructions/Controls Area */}
